@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Pegawai</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 20px;
+            padding: 20px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #ffc107;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <h2>Daftar Pegawai</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Nama</th>
+                <th>Jabatan</th>
+                <th>Gaji</th>
+            </tr>
+        </thead>
+        <tbody id="pegawai-table">
+        </tbody>
+    </table>
+
+    <script>
+        const pegawai = [
+            { No: 1, nama: "Natan", Umur: "25", Jabatan: "Manager", Gaji: "Rp 90.000.000" },
+            { No: 2, nama: "Rama", Umur: "26", Jabatan: "HRD", Gaji: "Rp 42.000.000" },
+            { No: 3, nama: "Kevin", Umur: "26", Jabatan: "Staff", Gaji: "Rp 39.000.000" },
+            { No: 4, nama: "Nabil", Umur: "28", Jabatan: "Karyawan", Gaji: "Rp 75.000.000" },
+            { No: 5, nama: "Arip", Umur: "25", Jabatan: "Karyawan", Gaji: "Rp 77.000.000" }
+        ];
+
+        const tableBody = document.getElementById("pegawai-table");
+        
+        pegawai.forEach(p => {
+            let row = `<tr>
+                        <td>${p.No}</td>
+                        <td>${p.nama}</td>
+                        <td>${p.Jabatan}</td>
+                        <td>${p.Gaji}</td>
+                      </tr>`;
+            tableBody.innerHTML += row;
+        });
+    </script>
+</body>
+</html>
